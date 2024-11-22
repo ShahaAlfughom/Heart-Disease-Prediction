@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Prediction</title>
+    <!-- ربط ملف CSS مع مسار static -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/css.style.css') }}">
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mt-5">Heart Disease Prediction</h1>
+        <form action="/predict" method="POST">
+            <div class="form-group">
+                <label for="Age">Age:</label>
+                <input type="number" class="form-control" id="Age" name="Age" required>
+            </div>
+            <div class="form-group">
+                <label for="RestingBP">Resting Blood Pressure:</label>
+                <input type="number" class="form-control" id="RestingBP" name="RestingBP" required>
+            </div>
+            <div class="form-group">
+                <label for="Cholesterol">Cholesterol:</label>
+                <input type="number" class="form-control" id="Cholesterol" name="Cholesterol" required>
+            </div>
+            <div class="form-group">
+                <label for="MaxHR">Maximum Heart Rate:</label>
+                <input type="number" class="form-control" id="MaxHR" name="MaxHR" required>
+            </div>
+            <div class="form-group">
+                <label for="Oldpeak">Oldpeak:</label>
+                <input type="number" step="any" class="form-control" id="Oldpeak" name="Oldpeak" required>
+            </div>
+
+            <!-- بيانات فئوية -->
+            <div class="form-group">
+                <label for="Sex">Sex:</label>
+                <select id="Sex" name="Sex" class="form-control" required>
+                    <option value="1">Male</option>
+                    <option value="0">Female</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="ChestPainType">Chest Pain Type:</label>
+                <select id="ChestPainType" name="ChestPainType" class="form-control" required>
+                    <option value="1">Typical Angina</option>
+                    <option value="2">Atypical Angina</option>
+                    <option value="3">Non-anginal Pain</option>
+                    <option value="4">Asymptomatic</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="ExerciseAngina">Exercise Induced Angina:</label>
+                <select id="ExerciseAngina" name="ExerciseAngina" class="form-control" required>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="FastingBS">Fasting Blood Sugar:</label>
+                <select id="FastingBS" name="FastingBS" class="form-control" required>
+                    <option value="0">Less than 120 mg/dl</option>
+                    <option value="1">Greater than 120 mg/dl</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="RestingECG">Resting Electrocardiographic Results:</label>
+                <select id="RestingECG" name="RestingECG" class="form-control" required>
+                    <option value="0">Normal</option>
+                    <option value="1">ST-T Wave Abnormality</option>
+                    <option value="2">Left Ventricular Hypertrophy</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="ST_Slope">ST Slope:</label>
+                <select id="ST_Slope" name="ST_Slope" class="form-control" required>
+                    <option value="1">Upsloping</option>
+                    <option value="2">Flat</option>
+                    <option value="3">Downsloping</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Predict</button>
+        </form>
+    </div>
+</body>
+</html>
