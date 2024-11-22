@@ -1,0 +1,17 @@
+# تجاهل بيئة Python الافتراضية (venv و env)
+venv/
+env/
+
+# تجاهل ملفات إعدادات PyCharm
+.idea/
+
+# تجاهل مجلدات مؤقتة (مثل scratches)
+scratches/
+
+# تجاهل ملفات الكاش في Python
+__pycache__/
+
+# تجاهل الملفات المؤقتة أو المساعدة مثل:
+*.log
+*.sqlite
+*.pyc
