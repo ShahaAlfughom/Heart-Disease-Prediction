@@ -7,9 +7,22 @@ import pandas as pd
 
 app = Flask(__name__)
 
+""""
 # تحميل النموذج المدرب مسبقاً (افترض أنك قمت بتدريب النموذج وحفظته باستخدام joblib)
 svm_clf=joblib.load('/Users/shahaalfughom/Desktop/Heart Disease App/heart_disease_model.pkl')
 scaler = joblib.load('/Users/shahaalfughom/Desktop/Heart Disease App/scaler.pkl')  # إذا كنت تستخدم StandardScaler أو أي محول آخر
+"""
+import os
+
+# تحديد المسارات النسبية للملفات
+model_path = os.path.join(os.path.dirname(__file__), 'heart_disease_model.pkl')
+scaler_path = os.path.join(os.path.dirname(__file__), 'scaler.pkl')
+
+# تحميل ملفات SVM و Scaler
+svm_clf = joblib.load(model_path)
+scaler = joblib.load(scaler_path)
+
+
 
 @app.route('/')
 def index():
